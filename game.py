@@ -24,12 +24,16 @@ def list_of_items(items):
     'money, a student handbook, laptop'
 
     """
+
+
     item_string = ""
     i = 0
     for item in items:
         if i == 0:
+            #Adds an item to the string if it's the first item
             item_string = item_string + item["name"]
         else:
+            #adds the next items with a comma
             to_add = ", " + item["name"]
             item_string = item_string + to_add
         i += 1
@@ -59,6 +63,7 @@ def print_room_items(room):
 
     """
 
+    #if room["items"] checks if items is empty
     if room["items"]:
         print("There is", list_of_items(room["items"]), "here.")
         print()
@@ -75,6 +80,7 @@ def print_inventory_items(items):
     <BLANKLINE>
 
     """
+    #if items checks if items is empty
     if items:
         print ("You have "+ list_of_items(items) + ".")
         print()
@@ -244,7 +250,9 @@ def execute_go(direction):
     (and prints the name of the room into which the player is
     moving). Otherwise, it prints "You cannot go there."
     """
+    #global makes current_room work in a module outside of player.py
     global current_room
+    #try to go to a room. If the room does not exist an error will be thrown.
     try:
         new_room = rooms[current_room["exits"][direction]]
         current_room = new_room
@@ -258,9 +266,12 @@ def execute_take(item_id):
     there is no such item in the room, this function prints
     "You cannot take that."
     """
+    #global makes current_room work in a module outside of player.py
     global current_room
+    #will search the room items to find the item the user input
     for item in current_room["items"]:
         if item["id"] == item_id:
+            #removes the item from the room and adds it to player inventory
             current_room["items"].remove(item)
             inventory.append(item)
             return
@@ -273,8 +284,10 @@ def execute_drop(item_id):
     no such item in the inventory, this function prints "You cannot drop that."
     """
     global current_room
+    #will search the rinventory to find the item the user input
     for item in inventory:
         if item["id"] == item_id:
+            #removes the item from inventory and places it in the room
             current_room["items"].append(item)
             inventory.remove(item)
             return
