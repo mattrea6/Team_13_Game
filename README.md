@@ -15,6 +15,7 @@ What needs made:
 3: List of lines- Adrian
 4: Function of the battle- Joe
 5: Add attribute to items for increasing time to rap.-  
+6: Edit parser and execution functions for rap battles. - Matt
 
 Extra ideas (later):
 1: Experience
