@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from map import rooms
+from roomsgit import rooms
 from player import *
 from items import *
 from gameparser import *
@@ -293,6 +293,8 @@ def execute_drop(item_id):
             return
     print("You cannot drop that")
 
+def execute_battle(name):
+    pass
 
 def execute_command(command):
     """This function takes a command (a list of words as returned by
@@ -322,6 +324,12 @@ def execute_command(command):
             execute_drop(command[1])
         else:
             print("Drop what?")
+
+    elif command[0] = "battle":
+        if len(command) > 1:
+            execute_battle(command[1])
+        else:
+            print("Battle who?")
 
     else:
         print("This makes no sense.")
