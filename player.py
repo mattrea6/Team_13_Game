@@ -1,7 +1,8 @@
 from items import *
-from map import rooms
+#from rooms import rooms
 
-inventory = [item_id, item_laptop, item_money]
+inventory = [item_necklace, item_glasses, item_dreadlocks]
 
 # Start game at the reception
-current_room = rooms["Reception"]
+#global current_room
+#current_room = rooms["Studio"]
