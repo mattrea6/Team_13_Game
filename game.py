@@ -5,7 +5,11 @@ from player import *
 from items import *
 from gameparser import *
 
-
+def calculate_reputation(inventory):
+    reputation= 0 #resets reputation of the player
+    for item in inventory:  #iterates through every item in the players inventory (see player.py)
+        reputation = reputation + item["reputation"] #Reputation is added to by each item
+    return reputation #The total rep is returned to the function that called it (probs the battle one.)
 
 def list_of_items(items):
     """This function takes a list of items (see items.py for the definition) and
