@@ -1,13 +1,13 @@
 item_necklace = {
-    "id": "necklace"
+    "id": "necklace",
 
     "name": " a gold necklace",
 
     "description":
     """Your massive gold chain. Literally, your street cred has increased
-    just because nobody knows how you can carry them around your neck"""
+    just because nobody knows how you can carry them around your neck""",
 
-    "reputation": 1
+    "reputation": 1,
 }
 
 item_glasses = {
@@ -18,9 +18,9 @@ item_glasses = {
     "description":
     """"Your sunglasses. They increase your reputation just because since you've
     been wearing them nobody has seen you take them off. Word is you sleep with
-    them on."""
+    them on.""",
 
-    "reputation": 1
+    "reputation": 1,
 }
 
 item_dreadlocks = {
@@ -29,9 +29,9 @@ item_dreadlocks = {
     "name": "A new haircut of fresh dreadlocks",
 
     "description":
-    "Yeah, you deffo look better with that haircut...what do I know I can only code."
+    "Yeah, you deffo look better with that haircut...what do I know I can only code.",
 
-    "reputation": 1
+    "reputation": 1,
 }
 
 item_tattoo = {
@@ -40,9 +40,9 @@ item_tattoo = {
     "name": "a sugarton of tattoos",
 
     "description": """Your tattoos have increased your street cred simply because
-    nobody understands how you got that much of your body covered in ink."""
+    nobody understands how you got that much of your body covered in ink.""",
 
-    "reputation": 1
+    "reputation": 1,
 }
 
 item_mic = {
@@ -52,9 +52,9 @@ item_mic = {
 
     "description": """This microphone has the latest technology which allows
     you to rap even better!! If we were better at coding, this item could
-    be really special!"""
+    be really special!""",
 
-    "reputation": 1
+    "reputation": 1,
 }
 
 item_hat = {
@@ -63,8 +63,8 @@ item_hat = {
     "name": "a hat of some kind (use uour imagination)",
 
     "description": """Is it a snapback? Is it a bandana? I literally could
-    not care less. What I do know is your street cred has increased."""
+    not care less. What I do know is your street cred has increased.""",
 
-    "reputation": 1
+    "reputation": 1,
 }
                             #Items changed by Darren 18/10/17
