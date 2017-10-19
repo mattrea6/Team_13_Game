@@ -3,14 +3,14 @@ from items import *
 room_studio = {
 	"name": "Studio",
 	"rap": "this ting go skraa, pap pap kak kak kak, skiddy skit pap pap, an a pop pop truu boom",
-	"n": 12,
+	"n": 20,
 	"description": "The studio is small, and smells of marijuana. The coat rack is empty, man's not hot.",
 	"rapper": "Roadman Shaq",
 	"rapperbeat": False,
-	"exits": {"east": "Warehouse", "south": "Street Corner", "north": "Concert"},
+	"exits": {"east": "Warehouse", "south": "Street Corner", "north": "Concert", "west": "Main Street"},
 	"items": [],
 	"award": item_hat
-
+	
 }
 
 room_warehouse = {
@@ -19,7 +19,7 @@ room_warehouse = {
 	"n": 4,
 	"description": "It's a dimly lit warehouse, the air is thick with smoke and excitement",
 	"rapper": "Kendrick Lamar",
-	"exits": {"north": "Grove Street"},
+	"exits": {"west": "Studio", "north": "Grove Street"},
 	"rapperbeat": False,
 	"items": [],
 	"award": item_dreadlocks
@@ -59,19 +59,19 @@ jail_entrance = {
 	"rapperbeat": False,
 	"rapper":"",
 
-
+	
 }
 
 main_street = {
 	"name": "Main Street",
 	"description": "You are on the Main Street.",
-	"exits": {"north":"Jail Entrance","south":"Grove Street","east":"Studio"},
+	"exits": {"north":"Jail Entrance", "south":"Grove Street", "east":"Studio"},
 	"items":[],
-	"rap":"",
+	"rap": "I'm bout to make this mic short circuit, this beat is whack and fits you perfect",
 	"n":10,
 	"rapperbeat": False,
-	"rapper":"",
-
+	"rapper":"Novice Rapper",
+	"award": item_glasses
 }
 
 grove_street = {
@@ -83,7 +83,7 @@ grove_street = {
 	"n":0,
 	"rapperbeat": False,
 	"rapper":"",
-
+	
 }
 
 
@@ -97,3 +97,9 @@ rooms = {
     "Main Street": main_street,
     "Jail Entrance":jail_entrance
 }
+
+
+
+
+
+
