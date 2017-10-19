@@ -17,6 +17,7 @@ main_street = {
 grove_street = {
 	"name": "Grove Street",
 	"description": "You are in your old cul-de-sac. Your old home.",
+<<<<<<< HEAD
 	"exits": {"north":"Main Street"},
 	"items":[]
 
@@ -30,6 +31,12 @@ room_studio = {
 	"n": 18,
 	"description": "The studio is small, and smells of marijuana. The coat rack is empty, man's not hot.",
 	"rapper": "Roadman Shaq",
+=======
+	"exits": {"north":"Main Street", "south": "Warehouse"},
+	"items":[],
+	"rap":"",
+	"n":0,
+>>>>>>> 4ae516b278f0284042024ea64c559907e9b97ee1
 	"rapperbeat": False,
 	"exits": {"west":"Main Street","east": "Warehouse"},
 	"items": []
