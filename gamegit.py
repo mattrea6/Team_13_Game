@@ -4,8 +4,8 @@ from player import *
 from gameparser import *
 
 
-rap = current_room["rap"] # finds the relative rap from the room that you're in 
-n = current_room["n"] # this is the time limit you get for rapping in the current 
+rap = current_room["rap"] # finds the relative rap from the room that you're in
+n = current_room["n"] # this is the time limit you get for rapping in the current
 global a
 a = 1.0
 
@@ -63,8 +63,23 @@ def battle(n, room):
 	else:
 		print("You pussied out of the fight and got thrown out of the club")
 
+def print_inventory_items(players_items):
+    if len(players_items) ==0:
+        print("You currently have no items")
+    else:
+        print("You have "+list_of_items(players_items)+".")
 
-	
+def list_of_items(items):
+    full_list= ""
+    i=0
+    for item in items:
+        if i ==0:
+            full_list= full_list+ item["name"]
+            i=+1
+        else:
+            full_list = full_list +", " +item["name"]
+    return full_list
+
 
 
 
@@ -87,6 +102,7 @@ def print_exit(direction, leads):
 
 
 def print_menu(exits):
+	print_inventory_items(inventory)
 	for direction in exits:
 		print_exit(direction, exit_leads_to(exits, direction))
 	if current_room["rapperbeat"] == False:
@@ -98,7 +114,7 @@ def print_menu(exits):
 
 
 def execute_command(command):
-    
+
     #if 0 == len(command):
      #   return
 
@@ -119,12 +135,12 @@ def execute_go(direction):
 	global current_room
 	if direction in current_room["exits"]:
 		a = (current_room["exits"])
-		
+
 		b = a[direction]
-		
+
 		current_room = rooms[b]
-		
-		
+
+
 	else:
 		print("You need to pick a valid direction")
 
@@ -141,15 +157,15 @@ def menu(exits):
 
 def main():
 	while True:
-		
+
 		print_room(current_room)
 		command = menu(current_room["exits"])
 		#print_menu(current_room["exits"])
 		execute_command(command)
 		#battle(n, current_room)
 		calculate_reputation(inventory)
-		
-		
+
+
 
 
 
