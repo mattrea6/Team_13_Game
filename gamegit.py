@@ -69,7 +69,8 @@ def print_menu(exits):
 	for direction in exits:
 		print_exit(direction, exit_leads_to(exits, direction))
 	if current_room["rapperbeat"] == False:
-		print("Battle " + current_room["rapper"])
+		if len(current_room["rapper"]) != 0:
+			print("Battle " + current_room["rapper"])
 	else:
 		print("")
 		print("")
@@ -85,8 +86,8 @@ def execute_command(command):
 
     if command.split(' ', 1)[0] == "battle":
     	if current_room["rapperbeat"] == False:
-    		
-    		battle(n, current_room)
+    		if len(current_room["rapper"]) != 0:
+    			battle(n, current_room)
     elif command.split(' ', 1)[0] == "go":
     	execute_go(command.split(' ',1)[1])
     else:

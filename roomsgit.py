@@ -77,7 +77,7 @@ main_street = {
 grove_street = {
 	"name": "Grove Street",
 	"description": "You are in your old cul-de-sac. Your old home.",
-	"exits": {"north":"Main Street"},
+	"exits": {"north":"Main Street", "south": "Warehouse"},
 	"items":[],
 	"rap":"",
 	"n":0,
