@@ -10,7 +10,7 @@ room_studio = {
 	"exits": {"east": "Warehouse", "south": "Street Corner", "north": "Concert"},
 	"items": [],
 	"award": item_hat
-	
+
 }
 
 room_warehouse = {
@@ -19,7 +19,7 @@ room_warehouse = {
 	"n": 4,
 	"description": "It's a dimly lit warehouse, the air is thick with smoke and excitement",
 	"rapper": "Kendrick Lamar",
-	"exits": {"west": "Studio"},
+	"exits": {"north": "Grove Street"},
 	"rapperbeat": False,
 	"items": [],
 	"award": item_dreadlocks
@@ -59,7 +59,7 @@ jail_entrance = {
 	"rapperbeat": False,
 	"rapper":"",
 
-	
+
 }
 
 main_street = {
@@ -71,7 +71,7 @@ main_street = {
 	"n":10,
 	"rapperbeat": False,
 	"rapper":"",
-	
+
 }
 
 grove_street = {
@@ -83,7 +83,7 @@ grove_street = {
 	"n":0,
 	"rapperbeat": False,
 	"rapper":"",
-	
+
 }
 
 
@@ -97,9 +97,3 @@ rooms = {
     "Main Street": main_street,
     "Jail Entrance":jail_entrance
 }
-
-
-
-
-
-
