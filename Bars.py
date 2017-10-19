@@ -7,23 +7,37 @@ def hot_fire_hard_bars(number):
 
 	4 = 
 
-	5 = ""
+	5 = 
+	
 	6 =
+	
 	7 =
+	
 	8 =
+	
 	9 =
+	
 	10 =
 
 def mild_fire_medium_bars:
 	11 =
+	
 	12 =
+	
 	13 =
+	
 	14 =
+	
 	15 =
+	
 	16 =
+	
 	17 =
+	
 	18 =
+	
 	19 =
+	
 	20 = 
 
 def blend_easy_bars:
@@ -51,4 +65,5 @@ def blend_easy_bars:
 	40 =
 def legendary_bars:
 	41 = "His palms are sweaty, knees weak, arms are heavy. There's vomit on his sweater already. Mom's spaghetti"
+	
 	42 = "Now, once upon a time not long ago, there was a little rapper about to blow. But his album came, and it was not good. I think it went lead or double copper-wood"
