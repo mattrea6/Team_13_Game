@@ -3,11 +3,11 @@ from items import *
 room_studio = {
 	"name": "Studio",
 	"rap": "this ting go skraa, pap pap kak kak kak, skiddy skit pap pap, an a pop pop truu boom",
-	"room_difficulty": 20,
+	"room_difficulty": 14,
 	"description": "The studio is small, and smells of marijuana. The coat rack is empty, man's not hot.",
 	"rapper": "Roadman Shaq",
 	"rapperbeat": False,
-	"exits": {"east": "Warehouse", "south": "Street Corner", "north": "Concert", "west": "Main Street"},
+	"exits": {"east": "Warehouse", "south": "Street Corner", "north": "Concert"},
 	"items": [],
 	"award": item_hat
 
@@ -16,7 +16,7 @@ room_studio = {
 room_warehouse = {
 	"name": "Warehouse",
 	"rap": "Kung fu kenny now, my resume is real enough for two millenniums",
-	"room_difficulty": 4,
+	"room_difficulty": 14,
 	"description": "It's a dimly lit warehouse, the air is thick with smoke and excitement",
 	"rapper": "Kendrick Lamar",
 	"exits": {"west": "Studio", "north": "Grove Street"},
@@ -65,10 +65,10 @@ jail_entrance = {
 main_street = {
 	"name": "Main Street",
 	"description": "You are on the Main Street.",
-	"exits": {"north":"Jail Entrance", "south":"Grove Street", "east":"Studio"},
+	"exits": {"north":"Jail Entrance", "south":"Grove Street"},
 	"items":[],
 	"rap": "I'm bout to make this mic short circuit, this beat is whack and fits you perfect",
-	"room_difficulty":10,
+	"room_difficulty":16,
 	"rapperbeat": False,
 	"rapper":"Novice Rapper",
 	"award": item_glasses
@@ -80,9 +80,9 @@ grove_street = {
 	"exits": {"north":"Main Street", "south": "Warehouse"},
 	"items":[],
 	"rap":"",
-	"room_difficulty":0,
+	"room_difficulty":14,
 	"rapperbeat": False,
-	"rapper":"",
+	"rapper":"Ice Cube",
 
 }
 
