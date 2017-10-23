@@ -7,6 +7,12 @@ from player import *
 from gameparser import *
 from Bars import *
 
+global score
+score = {}
+global player_score
+player_score = 0
+
+start_time = datetime.datetime.now()
 
 #rap = current_room["rap"]   # finds the relative rap from the room that you're in
 #n = current_room["n"]   # this is the time limit you get for rapping in the current
@@ -22,9 +28,11 @@ def slow_type(statement, typing_speed):
 
 def screen_menu():
     """First menu when the game is executed. Appears once."""
-    slow_type("\n" + "\n" + "RAPPING GAME (title in progress)" + "\n" + "\n" + "\n" + "Your goal is to become the best rapper, surpassing even that of Eminem." + "\n", 200)
-    slow_type("The more items you pick up, the lower your overall score will be - the lower the score the better!" + "\n", 200)
-    slow_type("Also, the less rappers you have to destroy, the better your overall score will be." + "\n" + "\n", 200)
+    slow_type("\n" + "\n" + "RAPPING GAME (title in progress)" + "\n" + "\n" + "\n" + "Your goal is to become the best rapper, surpassing even that of Eminem." + "\n", 800)
+    slow_type("The more items you pick up, the lower your overall score will be - the lower the score the better!" + "\n", 800)
+    slow_type("Also, the less rappers you have to destroy, the better your overall score will be." + "\n" + "\n", 800)
+    global username
+    username = input("What is your name?: ")
     difficulty = input("easy / medium / hard: ")
     global a
     if difficulty == "easy":
@@ -59,6 +67,7 @@ def produce_bar():
 def battle():
     """Function that completes battle, takes a timed input, gives player item etc."""
     global a
+    global player_score
     players_rap = produce_bar()
     print("")
     slow_type("You're in the heat of the battle! You have " + str(int(current_room["room_difficulty"]) * a + int(calculate_reputation(inventory))) + " seconds to show your talent and rap " + "'" + players_rap + "'" +"\n", 200)
@@ -77,6 +86,8 @@ def battle():
             if c.seconds > total_time:  # if the user time is larger than what the room's allocated time is
                 slow_type("You didn't rap fast enough!", 50)
                 slow_type("That took you " + str(c.seconds) + " seconds, which is " + str(c.seconds - total_time) + " seconds more than it should have." + "\n" + "Maybe you should try some other rappers first to build up your reputation?", 100)
+                global player_score
+                player_score += 10
             else:
                 slow_type("You showed your rapping skills and won the rap battle!" + "\n", 200)
                 current_room["rapperbeat"] = True
@@ -85,10 +96,13 @@ def battle():
                 slow_type("Winning the rap battle got you a " + current_room["award"]["name"] + "." + "\n", 150)
                 slow_type("This " + current_room["award"]["id"] + " gives you an extra " + str(current_room["award"]["reputation"]) + " reputation.", 150)
                 slow_type("This now makes your total reputation " + str(calculate_reputation(inventory)) + ".", 150)
+                player_score += c.seconds
         else:
             slow_type("You didn't rap the right words, and flopped in the battle.", 150)
+            player_score += 10
     else:
         slow_type("You pussied out of the fight and got thrown out of the club", 150)
+        player_score += 5
 
 
 def print_inventory_items(players_items):
@@ -198,7 +212,17 @@ def main():
         # battle(n, current_room)
         calculate_reputation(inventory)
         if item_tattoo in inventory:
+            end_time = datetime.datetime.now()
+            total_game_time = end_time - start_time
+            divmod(total_game_time.days * 86400 + total_game_time.seconds, 60)
+            scr = total_game_time.seconds
+            global player_score
+            player_score += scr
+            player_score = player_score * a
             slow_type("You have beaten one of the greatest rappers ever and performed for thousands," + "\n" + "You win.", 300)
+            slow_type("Your score for the game was " + str(player_score) + " points!", 300)
             break
+
+
 
 main()
