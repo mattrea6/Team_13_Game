@@ -8,16 +8,16 @@ from gameparser import *
 from Bars import *
 
 global score
-score = {}
+score = {} 
 global player_score
-player_score = 0
+player_score = 0 # start player with 0 score
 
 start_time = datetime.datetime.now()
 
 #rap = current_room["rap"]   # finds the relative rap from the room that you're in
 #n = current_room["n"]   # this is the time limit you get for rapping in the current
-global a
-a = 0.75  # CHANGE THIS BACK
+global difficulty_multiplier
+difficulty_multiplier = 1.0
 
 def slow_type(statement, typing_speed):
     for letter in statement:
@@ -34,13 +34,13 @@ def screen_menu():
     global username
     username = input("What is your name?: ")
     difficulty = input("easy / medium / hard: ")
-    global a
+    global difficulty_multiplier
     if difficulty == "easy":
-        a = 1.5
+        difficulty_multiplier = 1.5 
     elif difficulty == "medium":
-        a = 1.0
+        difficulty_multiplier = 1.0
     elif difficulty == "hard":
-        a = 0.75
+        difficulty_multiplier = 0.75
     else:
         print("That's not an option")
         difficulty = input("easy/medium/hard: ")
@@ -57,8 +57,8 @@ def calculate_reputation(inventory):
 
 def produce_bar():
     """Return a random bar depending on the difficulty for the battle."""
-    global a
-    a = float(a)
+    global difficulty_multiplier
+    a = float(difficulty_multiplier)
     length = len(difficulty_dict[a])
     choice = random.randrange(0, length)
     return difficulty_dict[a][choice]
@@ -66,11 +66,11 @@ def produce_bar():
 
 def battle():
     """Function that completes battle, takes a timed input, gives player item etc."""
-    global a
+    global difficulty_multiplier
     global player_score
     players_rap = produce_bar()
     print("")
-    slow_type("You're in the heat of the battle! You have " + str(int(current_room["room_difficulty"]) * a + int(calculate_reputation(inventory))) + " seconds to show your talent and rap " + "'" + players_rap + "'" +"\n", 200)
+    slow_type("You're in the heat of the battle! You have " + str(int(current_room["room_difficulty"]) * difficulty_multiplier + int(calculate_reputation(inventory))) + " seconds to show your talent and rap " + "'" + players_rap + "'" +"\n", 200)
     slow_type("You must type word for word, letter for letter." + "\n", 200)
     yes_or_no = input("Ready? y / n: ")
     if yes_or_no == "y":
@@ -81,7 +81,7 @@ def battle():
             b = datetime.datetime.now()  # record the time that the user entered their input
             c = b - z  # work out how long it took the user to input by subtracting the start time from the end time
             divmod(c.days * 86400 + c.seconds, 60)  # this formats the time into something that can be used in an if statement
-            d = current_room["room_difficulty"] * a
+            d = current_room["room_difficulty"] * difficulty_multiplier
             total_time = d + int(calculate_reputation(inventory))
             if c.seconds > total_time:  # if the user time is larger than what the room's allocated time is
                 slow_type("You didn't rap fast enough!", 50)
@@ -218,7 +218,7 @@ def main():
             scr = total_game_time.seconds
             global player_score
             player_score += scr
-            player_score = player_score * a
+            player_score = player_score * difficulty_multiplier
             slow_type("You have beaten one of the greatest rappers ever and performed for thousands," + "\n" + "You win.", 300)
             slow_type("Your score for the game was " + str(player_score) + " points!", 300)
             break
