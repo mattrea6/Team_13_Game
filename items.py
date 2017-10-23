@@ -7,7 +7,8 @@ item_necklace = {
     "name": " a gold necklace",
 
     "description":
-    """Your massive gold chain. Literally, your street cred has increased just because nobody knows how you can carry them around your neck""",
+    """Your massive gold chain. Literally, your street cred has increased
+    just because nobody knows how you can carry them around your neck""",
 
     "reputation": 1,
     }
@@ -18,7 +19,9 @@ item_glasses = {
     "name": "a pair of cool sunglasses",
 
     "description":
-    "'The sunglasses increase your reputation just because since you've started wearing them, no-one has seen you take them off. Word is you sleep with them on?!'",
+    """"Your sunglasses. They increase your reputation just because since you've
+    been wearing them nobody has seen you take them off. Word is you sleep with
+    them on.""",
 
     "reputation": 1,
     }
@@ -26,10 +29,10 @@ item_glasses = {
 item_dreadlocks = {
     "id": "dreadlocks",
 
-    "name": "a new haircut - fresh dreadlocks",
+    "name": "A new haircut of fresh dreadlocks",
 
     "description":
-    "Yeah, you deffo look better with that haircut... actually what do I know, I can only code.",
+    "Yeah, you deffo look better with that haircut...what do I know I can only code.",
 
     "reputation": 1,
     }
@@ -60,9 +63,10 @@ item_mic = {
 item_hat = {
     "id": "hat",
 
-    "name": "a hat of some kind (use your imagination)",
+    "name": "a hat of some kind (use uour imagination)",
 
-    "description": """Is it a snapback? Is it a bandana? I literally could not care less. What I do know is your street cred has increased.""",
+    "description": """Is it a snapback? Is it a bandana? I literally could
+    not care less. What I do know is your street cred has increased.""",
 
     "reputation": 1,
     }
