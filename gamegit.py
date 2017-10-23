@@ -94,8 +94,8 @@ def battle():
                 slow_type("That took you " + str(c.seconds) + " seconds." + "\n", 200)
                 inventory.append(current_room["award"])
                 slow_type("Winning the rap battle got you a " + current_room["award"]["name"] + "." + "\n", 150)
-                slow_type("This " + current_room["award"]["id"] + " gives you an extra " + str(current_room["award"]["reputation"]) + " reputation.", 150)
-                slow_type("This now makes your total reputation " + str(calculate_reputation(inventory)) + ".", 150)
+                slow_type("This " + current_room["award"]["id"] + " gives you an extra " + str(current_room["award"]["reputation"]) + " reputation." + "\n", 150)
+                slow_type("This now makes your total reputation " + str(calculate_reputation(inventory)) + "." + "\n", 150)
                 player_score += c.seconds
         else:
             slow_type("You didn't rap the right words, and flopped in the battle.", 150)
@@ -219,8 +219,8 @@ def main():
             global player_score
             player_score += scr
             player_score = player_score * difficulty_multiplier
-            slow_type("You have beaten one of the greatest rappers ever and performed for thousands," + "\n" + "You win.", 300)
-            slow_type("Your score for the game was " + str(player_score) + " points!", 300)
+            slow_type("\n" + "You have beaten one of the greatest rappers ever and performed for thousands," + "\n", 300)
+            slow_type("\n" + "Your score for the game was " + str(player_score) + " points!" + "\n", 300)
             break
 
 
