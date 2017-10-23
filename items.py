@@ -7,10 +7,9 @@ item_necklace = {
     "name": " a gold necklace",
 
     "description":
-    """Your massive gold chain. Literally, your street cred has increased
-    just because nobody knows how you can carry them around your neck""",
+    """Your massive gold chain. Literally, your street cred has increased just because nobody knows how you can carry them around your neck""",
 
-    "reputation": 1,
+    "reputation": 2,
     }
 
 item_glasses = {
@@ -19,22 +18,20 @@ item_glasses = {
     "name": "a pair of cool sunglasses",
 
     "description":
-    """"Your sunglasses. They increase your reputation just because since you've
-    been wearing them nobody has seen you take them off. Word is you sleep with
-    them on.""",
+    "'The sunglasses increase your reputation just because since you've started wearing them, no-one has seen you take them off. Word is you sleep with them on?!'",
 
-    "reputation": 1,
+    "reputation": 2,
     }
 
 item_dreadlocks = {
     "id": "dreadlocks",
 
-    "name": "A new haircut of fresh dreadlocks",
+    "name": "a new haircut - fresh dreadlocks",
 
     "description":
-    "Yeah, you deffo look better with that haircut...what do I know I can only code.",
+    "Yeah, you deffo look better with that haircut... actually what do I know, I can only code.",
 
-    "reputation": 1,
+    "reputation": 3,
     }
 
 item_tattoo = {
@@ -51,23 +48,30 @@ item_tattoo = {
 item_mic = {
     "id": "mic",
 
-    "name": "the latest microphone",
+    "name": "brand new microphone",
 
-    "description": """This microphone has the latest technology which allows
-    you to rap even better!! If we were better at coding, this item could
-    be really special!""",
+    "description": """This microphone has the latest technology which allows you to rap even better!! If we were better at coding, this item could be really special!""",
 
-    "reputation": 1,
+    "reputation": 3,
     }
 
 item_hat = {
     "id": "hat",
 
-    "name": "a hat of some kind (use uour imagination)",
+    "name": "a hat of some kind (use your imagination)",
 
-    "description": """Is it a snapback? Is it a bandana? I literally could
-    not care less. What I do know is your street cred has increased.""",
+    "description": """Is it a snapback? Is it a bandana? I literally could not care less. What I do know is your street cred has increased.""",
 
-    "reputation": 1,
+    "reputation": 2,
     }
+
+item_joint = {
+    "id": "joint",
+
+    "name": "a j loaded to the brim",
+
+    "description": "Snoop's prized possession, it's still lit.",
+
+    "reputation": 2
+}
 # Items changed by Darren 18/10/17

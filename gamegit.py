@@ -6,6 +6,7 @@ from roomsgit import rooms
 from player import *
 from gameparser import *
 from Bars import *
+import os #this will be used to clear screen when moving room to room
 
 global score
 score = {} 
@@ -19,31 +20,49 @@ start_time = datetime.datetime.now()
 global difficulty_multiplier
 difficulty_multiplier = 1.0
 
+def cls():
+            os.system('cls' if os.name=='nt' else 'clear')
+
+cls()
+
 def slow_type(statement, typing_speed):
     for letter in statement:
         sys.stdout.write(letter)
         sys.stdout.flush()
         time.sleep(random.random()*10.0/typing_speed)
-    #print("")
+
+'''def print(statement, typing_speed):
+    for letter in statement:
+        sys.stdout.write(letter)
+        sys.stdout.flush()
+        time.sleep(random.random()*10.0/typing_speed)
+    #print("")'''
 
 def screen_menu():
     """First menu when the game is executed. Appears once."""
-    slow_type("\n" + "\n" + "RAPPING GAME (title in progress)" + "\n" + "\n" + "\n" + "Your goal is to become the best rapper, surpassing even that of Eminem." + "\n", 800)
-    slow_type("The more items you pick up, the lower your overall score will be - the lower the score the better!" + "\n", 800)
-    slow_type("Also, the less rappers you have to destroy, the better your overall score will be." + "\n" + "\n", 800)
+    slow_type("\n" + "\n" + "RAPPING GAME (title in progress)" + "\n" + "\n" + "\n" + "Your goal is to become the best rapper, surpassing even that of Eminem." + "\n", 400)
+    input("")
+    slow_type("The more items you pick up, the lower your overall score will be - the lower the score the better!" + "\n", 400)
+    input("")
+    slow_type("Also, the less rappers you have to destroy, the better your overall score will be." + "\n" + "\n", 400)
+    input("")
     global username
-    username = input("What is your name?: ")
-    difficulty = input("easy / medium / hard: ")
+    slow_type("What is your name?:" + "\n", 400)
+    username = input("> ")
+    slow_type("Chose your difficulty - harder difficulty means better score! EASY / MEDIUM / HARD: " + "\n", 400)
+    difficulty = input("> ")
     global difficulty_multiplier
-    if difficulty == "easy":
+    if difficulty.lower() == "easy":
         difficulty_multiplier = 1.5 
-    elif difficulty == "medium":
+    elif difficulty.lower() == "medium":
         difficulty_multiplier = 1.0
-    elif difficulty == "hard":
+    elif difficulty.lower() == "hard":
         difficulty_multiplier = 0.75
     else:
-        print("That's not an option")
+        slow_type("That's not an option", 400)
         difficulty = input("easy/medium/hard: ")
+    cls()
+
 
 
 def calculate_reputation(inventory):
@@ -70,12 +89,15 @@ def battle():
     global player_score
     players_rap = produce_bar()
     print("")
-    slow_type("You're in the heat of the battle! You have " + str(int(current_room["room_difficulty"]) * difficulty_multiplier + int(calculate_reputation(inventory))) + " seconds to show your talent and rap " + "'" + players_rap + "'" +"\n", 200)
-    slow_type("You must type word for word, letter for letter." + "\n", 200)
-    yes_or_no = input("Ready? y / n: ")
+    slow_type("You're in the heat of the battle! You have " + str(int(current_room["room_difficulty"]) * difficulty_multiplier + int(calculate_reputation(inventory))) + " seconds to show your talent and rap " + "\n" + "'" + players_rap + "'" +"\n", 400)
+    input("")
+    slow_type("You must type word for word, letter for letter." + "\n", 400)
+    input("")
+    yes_or_no = input("Ready? y / n: " + "\n" + "> ")
     if yes_or_no == "y":
         z = datetime.datetime.now()  # gets the exact time that the user begins inputting the rap
-        rap_input = normalise_input(input(""), True)
+        print("")
+        rap_input = normalise_input(input("> "), True)
 
         if rap_input == normalise_input(players_rap, True):  # if the user input is exactly what the room's rap is
             b = datetime.datetime.now()  # record the time that the user entered their input
@@ -84,33 +106,46 @@ def battle():
             d = current_room["room_difficulty"] * difficulty_multiplier
             total_time = d + int(calculate_reputation(inventory))
             if c.seconds > total_time:  # if the user time is larger than what the room's allocated time is
-                slow_type("You didn't rap fast enough!", 50)
-                slow_type("That took you " + str(c.seconds) + " seconds, which is " + str(c.seconds - total_time) + " seconds more than it should have." + "\n" + "Maybe you should try some other rappers first to build up your reputation?", 100)
+                slow_type("You didn't rap fast enough!", 400)
+                input("")
+                slow_type("\n" + "That took you " + str(c.seconds) + " seconds, which is " + str(c.seconds - total_time) + " seconds more than it should have." + "\n", 400)
+                input("")
+                slow_type("Maybe you should try some other rappers first to build up your reputation?" + "\n", 400)
                 global player_score
                 player_score += 10
+                input("[ENTER]")
             else:
-                slow_type("You showed your rapping skills and won the rap battle!" + "\n", 200)
+                slow_type("\n" + "\n" + "You showed your rapping skills and won the rap battle!" + "\n", 400)
                 current_room["rapperbeat"] = True
-                slow_type("That took you " + str(c.seconds) + " seconds." + "\n", 200)
+                input("")
+                slow_type("That took you " + str(c.seconds) + " seconds." + "\n", 400)
                 inventory.append(current_room["award"])
-                slow_type("Winning the rap battle got you a " + current_room["award"]["name"] + "." + "\n", 150)
-                slow_type("This " + current_room["award"]["id"] + " gives you an extra " + str(current_room["award"]["reputation"]) + " reputation." + "\n", 150)
-                slow_type("This now makes your total reputation " + str(calculate_reputation(inventory)) + "." + "\n", 150)
+                input("")
+                slow_type("\n" + "Winning the rap battle got you a " + current_room["award"]["name"] + "." + "\n", 400)
+                input("")
+                slow_type(current_room["award"]["description"] + "\n" + "\n", 400)
+                input("")
+                slow_type("The " + current_room["award"]["id"] + " gives you an extra " + str(current_room["award"]["reputation"]) + " reputation." + "\n", 400)
+                input("")
+                slow_type("This now makes your total reputation " + str(calculate_reputation(inventory)) + ".", 400)
                 player_score += c.seconds
+                print("")
+                input("\n" + "[ENTER]")
         else:
-            slow_type("You didn't rap the right words, and flopped in the battle.", 150)
-            player_score += 10
+            slow_type("You didn't rap the right words, and flopped in the battle." + "\n" + "\n", 400)
+            player_score += 10 
+            input("[ENTER]")
     else:
-        slow_type("You pussied out of the fight and got thrown out of the club", 150)
+        slow_type("You pussied out of the fight and got thrown out of the club", 400)
         player_score += 5
 
 
 def print_inventory_items(players_items):
     """Prints a list of inventory items."""
     if len(players_items) == 0:
-        slow_type("You currently have no items", 200)
+        slow_type("You currently have no items", 400)
     else:
-        slow_type("You have" + list_of_items(players_items) + ".", 200)
+        slow_type("You have" + list_of_items(players_items) + ".", 400)
 
 
 def list_of_items(items):
@@ -129,9 +164,9 @@ def list_of_items(items):
 def print_room(current_room):
     """Prints the description of the current room."""
     print("")
-    slow_type(current_room["name"].upper(), 300)
+    slow_type(current_room["name"].upper() + "\n", 400)
     print("")
-    slow_type(current_room["description"], 300)
+    slow_type(current_room["description"], 400)
     print("")
 
 
@@ -142,17 +177,19 @@ def exit_leads_to(exits, direction):
 
 def print_exit(direction, leads):
     """Tells the user about an exit."""
-    slow_type("\n""GO " + direction.upper() + " to " + leads + ".", 250)
+    slow_type("\n""GO " + direction.upper() + " to " + leads + ".", 400)
 
 
 def print_menu(exits):
     """Prints the list of options for the user to choose."""
     print_inventory_items(inventory)
+    print("")
+    input("")
     for direction in exits:
         print_exit(direction, exit_leads_to(exits, direction))
     if current_room["rapperbeat"] == False:
         if len(current_room["rapper"]) != 0:
-            slow_type("\n"+"Battle " + current_room["rapper"], 250)
+            slow_type("\n"+"Battle " + current_room["rapper"], 400)
     else:
         print("")
         print("")
@@ -169,9 +206,22 @@ def execute_command(command):
     if command.split(' ', 1)[0] == "battle":
         if current_room["rapperbeat"] == False:
             if len(current_room["rapper"]) != 0:
-                battle()
+                if current_room["rapper"] == "Eminem":
+                    if calculate_reputation(inventory) < 10:
+                        
+                        print("You need to have a street cred of above 10")
+                        input("")
+                        print("Your current street credit is at " + str(calculate_reputation(inventory)))
+                        input("")
+                    else:
+                        print(calculate_reputation(inventory))
+                        battle()
+                else:
+                    battle()
     elif command.split(' ', 1)[0] == "go":
         execute_go(command.split(' ', 1)[1])
+    elif command.split(' ',1)[0] == "inspect":
+        execute_inspect(command.split(' ', 1)[1])
     else:
         print("I don't understand that command")
 
@@ -190,10 +240,12 @@ def execute_go(direction):
         print("You need to pick a valid direction")
 
 
+
 def menu(exits):
     """Produces the menu via print_menu and takes the user's input."""
     print_menu(current_room["exits"])
-    user_input = input("> ")
+    print("")
+    user_input = input("\n" + "> ")
     if user_input == "q":
         raise SystemExit()
     else:
@@ -206,12 +258,15 @@ def main():
     while True:
 
         print_room(current_room)
+        input("")
         command = menu(current_room["exits"])
         # print_menu(current_room["exits"])
         execute_command(command)
         # battle(n, current_room)
         calculate_reputation(inventory)
-        if item_tattoo in inventory:
+        
+        cls()
+        if rooms["Concert"]["rapperbeat"] == True:
             end_time = datetime.datetime.now()
             total_game_time = end_time - start_time
             divmod(total_game_time.days * 86400 + total_game_time.seconds, 60)
@@ -219,8 +274,8 @@ def main():
             global player_score
             player_score += scr
             player_score = player_score * difficulty_multiplier
-            slow_type("\n" + "You have beaten one of the greatest rappers ever and performed for thousands," + "\n", 300)
-            slow_type("\n" + "Your score for the game was " + str(player_score) + " points!" + "\n", 300)
+            slow_type("\n" + "You have beaten one of the greatest rappers ever and performed for thousands," + "\n", 400)
+            slow_type("\n" + "Your score for the game was " + str(player_score) + " points!" + "\n", 400)
             break
 
 
