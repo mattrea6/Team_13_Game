@@ -74,4 +74,26 @@ item_joint = {
 
     "reputation": 2
 }
+
+item_ring = {
+    "id": "ring",
+
+    "name": "a gold ring",
+
+    "description": """This is the legendary ring of Snoop Dogg, only by wearing it
+    your rap skills increase.""",
+
+    "reputation": 1,
+}
+
+item_car = {
+    "id": "car",
+
+    "name": "limousine",
+
+    "description": """Now you can go anywhere with your personal driver.""",
+
+    "reputation": 1,   
+}
 # Items changed by Darren 18/10/17
+#2 items added by Philippe 10/24/2017
