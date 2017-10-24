@@ -13,6 +13,31 @@ room_studio = {
 
 }
 
+room_snoop = {
+	"name": "Snoop Dogg Mansion",
+	"rap": "Now, that, I got me some Seagram's gin, everybody got they cups, but they ain't chipped in.",
+	"room_difficulty": 5,
+	"description": "This is Snoop Doggs place of relaxation, do not get him angry!!",
+	"rapper": "Snoop Dogg",
+	"exits": {"east": "Main Street","south":"2Pac"},
+	"rapperbeat": False,
+	"items": [],
+	"award": item_ring
+	
+}
+
+room_2pac_biggie = {
+	"name": "2Pac & Biggie",
+	"rap": "Bein' born with less, I must confess only adds on to the stress",
+	"room_difficulty": 7,
+	"description": "It's 2Pac & Biggies favorite club",
+	"rapper": "2Pac & Biggie",
+	"exits": {"east": "Grove Street","north":"Snoop Dogg Mansion"},
+	"rapperbeat": False,
+	"items": [],
+	"award": item_car
+	
+}
 room_warehouse = {
 	"name": "Warehouse",
 	"rap": "Kung fu kenny now, my resume is real enough for two millenniums",
@@ -108,5 +133,9 @@ rooms = {
     "Grove Street": grove_street,
     "Main Street": main_street,
     "Jail Entrance":jail_entrance,
-    "Recording Booth": room_recordingbooth
+    "Recording Booth": room_recordingbooth,
+    "Snoop Dogg Mansion":room_snoop,
+    "2Pac & Biggie":room_2pac_biggie
 }
+#added 2 more rooms Snoop Dogg Mansion and 2Pac & Biggie 
+#feel free to modify the descriptions, if you please
