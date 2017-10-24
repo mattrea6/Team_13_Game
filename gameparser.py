@@ -53,3 +53,9 @@ def normalise_input(user_input, is_rap):
         no_punct = filter_words(no_punct.split(), skip_words)
 
     return no_punct
+
+def normalise_in(user_input):
+    no_punct = remove_punct(user_input).lower()
+    no_spaces = remove_spaces(no_punct)
+    return no_spaces
+

@@ -9,7 +9,7 @@ item_necklace = {
     "description":
     """Your massive gold chain. Literally, your street cred has increased just because nobody knows how you can carry them around your neck""",
 
-    "reputation": 2,
+    "reputation": 10,
     }
 
 item_glasses = {
@@ -96,4 +96,3 @@ item_car = {
     "reputation": 1,   
 }
 # Items changed by Darren 18/10/17
-#2 items added by Philippe 10/24/2017

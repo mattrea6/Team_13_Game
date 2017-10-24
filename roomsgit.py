@@ -137,5 +137,3 @@ rooms = {
     "Snoop Dogg Mansion":room_snoop,
     "2Pac & Biggie":room_2pac_biggie
 }
-#added 2 more rooms Snoop Dogg Mansion and 2Pac & Biggie 
-#feel free to modify the descriptions, if you please
