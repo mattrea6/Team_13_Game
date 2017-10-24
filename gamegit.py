@@ -246,7 +246,6 @@ def execute_command(command):
                         print("Your current street credit is at " + str(calculate_reputation(inventory)))
                         input("")
                     else:
-                        print(calculate_reputation(inventory))
                         battle()
                 else:
                     battle()

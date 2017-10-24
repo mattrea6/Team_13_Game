@@ -19,7 +19,7 @@ room_snoop = {
 	"room_difficulty": 5,
 	"description": "This is Snoop Doggs place of relaxation, do not get him angry!!",
 	"rapper": "Snoop Dogg",
-	"exits": {"east": "Main Street","south":"2Pac"},
+	"exits": {"east": "Main Street", "south":"2Pac & Biggie"},
 	"rapperbeat": False,
 	"items": [],
 	"award": item_ring
@@ -90,7 +90,7 @@ jail_entrance = {
 main_street = {
 	"name": "Main Street",
 	"description": "You are on the Main Street.",
-	"exits": {"north":"Jail Entrance", "south":"Grove Street"},
+	"exits": {"north":"Jail Entrance", "south":"Grove Street", "west": "Snoop Dogg Mansion"},
 	"items":[],
 	"rap": "I'm bout to make this mic short circuit, this beat is whack and fits you perfect",
 	"room_difficulty":16,
@@ -102,7 +102,7 @@ main_street = {
 grove_street = {
 	"name": "Grove Street",
 	"description": "You are in your old cul-de-sac. Your old home.",
-	"exits": {"north":"Main Street", "south": "Warehouse"},
+	"exits": {"north":"Main Street", "south": "Warehouse", "west": "2Pac & Biggie"},
 	"items":[],
 	"rap":"",
 	"room_difficulty":14,

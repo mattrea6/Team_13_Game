@@ -9,7 +9,7 @@ item_necklace = {
     "description":
     """Your massive gold chain. Literally, your street cred has increased just because nobody knows how you can carry them around your neck""",
 
-    "reputation": 10,
+    "reputation": 2,
     }
 
 item_glasses = {
@@ -39,10 +39,9 @@ item_tattoo = {
 
     "name": "a sugarton of tattoos",
 
-    "description": """Your tattoos have increased your street cred simply because
-    nobody understands how you got that much of your body covered in ink.""",
+    "description": """Your tattoos have increased your street cred simply because nobody understands how you got that much of your body covered in ink.""",
 
-    "reputation": 1,
+    "reputation": 10,
     }
 
 item_mic = {
