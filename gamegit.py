@@ -125,6 +125,9 @@ def battle():
 
     players_rap = produce_bar()
     print("")
+    slow_type(current_room["rapper"] + ": '" + current_room["rap"] + "'" + "\n", 300)
+    input("")
+    
     
     slow_type("You're in the heat of the battle! You have " + str(round(int(current_room["room_difficulty"]) * difficulty_multiplier + int(calculate_reputation(inventory)))) + " seconds to show your talent and rap " + "\n" + "'" + players_rap + "'" +"\n", 400)
     input("")
