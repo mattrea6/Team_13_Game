@@ -94,4 +94,23 @@ item_car = {
 
     "reputation": 1,   
 }
+item_grills = {
+    "id": "grills",
+
+    "name": "Diamond plated grills",
+
+    "description": """Your reputation in the hood is gonna go up with these!""",
+
+    "reputation": 3,
+}
+
+item_belt = {
+    "id" : "belt",
+
+    "name" : "Gucci belt",
+
+    "description" : """Damn boy you earned it! Your rap skills will highly increase wearing it!""",
+
+    "reputation" : 4,
+}
 # Items changed by Darren 18/10/17
