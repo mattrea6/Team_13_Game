@@ -109,7 +109,7 @@ item_belt = {
 
     "name" : "Gucci belt",
 
-    "description" : """Damn boy you earned those! Your rap skills will highly increase wearing it!""",
+    "description" : """Damn boy you earned it! Your rap skills will highly increase wearing it!""",
 
     "reputation" : 4,
 }
