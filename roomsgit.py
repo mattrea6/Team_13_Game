@@ -7,7 +7,7 @@ room_studio = {
 	"description": "The studio is small, and smells of marijuana. The coat rack is empty, man's not hot.",
 	"rapper": "Roadman Shaq",
 	"rapperbeat": False,
-	"exits": {"south": "Street Corner", "north": "Concert", "east": "Recording Booth", "west":"Main Street"},
+	"exits": {"south": "Street Corner", "north": "Rap Concert", "east": "Recording Booth", "west":"Main Street"},
 	"award": item_hat
 
 }
@@ -117,7 +117,7 @@ room_parking = {
 	"description": "As you rush down the stairs, you hit someone and turn around. You end up face to face with Dr.Dre.",
 	"rapper": "Dr.Dre",
 	"rapperbeat": False,
-	"exits": {"east" : "Studio", "down": "Underground battle rooms"},
+	"exits": {"west" : "Street Corner", "down": "Underground battle rooms"},
 	"award": item_watch
 
 }
