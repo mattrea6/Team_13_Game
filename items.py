@@ -94,6 +94,17 @@ item_car = {
 
     "reputation": 1,   
 }
+
+item_watch = {
+    "id": "watch",
+
+    "name": "gold and silver plated rolex",
+
+    "description": """You're pimped out with that ice boy, you're street cred has increased.""",
+
+    "reputation":2,
+}
+
 item_grills = {
     "id": "grills",
 
