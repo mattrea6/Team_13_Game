@@ -52,7 +52,7 @@ def slow_type(statement, typing_speed):
 """ first menu when the game is executed, which appears once """
 def screen_menu():
 
-    slow_type("\n" + "\n" + "RAPPING GAME (title in progress)" + "\n" + "\n" + "\n" + "Your goal is to become the best rapper, and beat Eminem at the Rap Concert." + "\n", 400)
+    slow_type("\n" + "\n" + "RAPPING GAME (title in progress)   [PEGI 18]" + "\n" + "\n" + "\n" + "Your goal is to become the best rapper, and beat Eminem at the Rap Concert." + "\n", 400)
     input("")
     slow_type("The less rappers you have to destroy, the better your overall score will be. The lower your score - the better!" + "\n" + "\n", 400)
     input("")
@@ -61,7 +61,7 @@ def screen_menu():
     slow_type("What is your name?:" + "\n", 400)
     username = input("> ")
 
-    if username == "Kirill":
+    if username.lower() == "kirill":
         slow_type("\n" + "Our lord and savior has returned...?! It's just as the prophecy foretold. " + "\n", 60)
         input("")
 

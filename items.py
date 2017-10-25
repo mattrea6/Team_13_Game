@@ -98,30 +98,41 @@ item_car = {
 item_watch = {
     "id": "watch",
 
-    "name": "gold and silver plated rolex",
+    "name": "watch",
 
-    "description": """You're pimped out with that ice boy, you're street cred has increased.""",
+    "description": "efweh",
 
-    "reputation":2,
+    "reputation": 1
 }
 
 item_grills = {
-    "id": "grills",
+    "id": "grill",
 
-    "name": "Diamond plated grills",
+    "name": "grills",
 
-    "description": """Your reputation in the hood is gonna go up with these!""",
+    "description": "ewofh",
 
-    "reputation": 3,
+    "reputation": 3
 }
 
 item_belt = {
-    "id" : "belt",
+    "id": "belt",
 
-    "name" : "Gucci belt",
+    "name": "belt",
 
-    "description" : """Damn boy you earned it! Your rap skills will highly increase wearing it!""",
+    "description": "efw",
 
-    "reputation" : 4,
+    "reputation": 1
 }
+
+item_cigs = {
+    "id": "cigarette",
+
+    "name": "cigarette",
+
+    "description": "ewfouih",
+
+    "reputation": 1
+}
+
 # Items changed by Darren 18/10/17

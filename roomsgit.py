@@ -83,7 +83,7 @@ main_street = {
 	"name": "Main Street",
 	"description": "You are on the Main Street.",
 	"exits": {"north":"Jail Entrance", "south":"Grove Street", "west": "Snoop Dogg Mansion", "east" : "Studio"},
-	"rap": "I'm bout to make this mic short circuit, this beat is whack and fits you perfect",
+	"rap": "I really don't know what I'm doing",
 	"room_difficulty":16,
 	"rapperbeat": False,
 	"rapper":"Novice Rapper",
@@ -98,7 +98,7 @@ grove_street = {
 	"rapperbeat": False,
 	"rapper":"Ice Cube",
 	"award": item_mic,
-	"rap": "wefpwiohj"
+	"rap": "Ya better check yoself before ya reck yoself"
 
 }
 
@@ -110,17 +110,17 @@ room_recordingbooth = {
 	"rapperbeat": False,
 	"rapper": "Notorious B.I.G.",
 	"award": item_ring,
-	"rap": "ewofiuh"
+	"rap": "It was all a dream I used to read word-up magazine"
 }
 
 room_parking = {
 	"name": "Parking",
 	"room_difficulty":10 ,
-	"description": "As you rush down the stairs, you hit someone and turn around. You end up face to face with Dr.Dre.",
+	"description": "As you rush down the stairs, you hit someone and turn around. You end up face to face with Dr Dre.",
 	"rapper": "Dr.Dre",
 	"rapperbeat": False,
-	"rap": "wofgeuihf",
-	"exits": {"west" : "Street Corner", "down": "Underground battle rooms"},
+	"rap": "Dr. Dre is the name, I'm ahead of my game, still puffing my leafs, still fuck with the beats, still not loving police",
+	"exits": {"west" : "Street Corner", "south": "Underground Battle Entrance"},
 	"award": item_watch
 
 }
@@ -131,8 +131,8 @@ room_lilwayne = {
 	"description": "Youre standing in the middle of a made up ring, ready to drop bombs on Lil Wayne",
 	"rapper": "Lil Wayne",
 	"rapperbeat": False,
-	"rap": "efowuih",
-	"exits": {"east": "Underground battle entrance"},
+	"rap": "Poppa was a Rolling Stone and them stones was crack",
+	"exits": {"east": "Underground Battle Entrance"},
 	"award": item_grills
 
 }
@@ -140,21 +140,22 @@ room_lilwayne = {
 room_battlerooms_entrance = {
 	"name": "Underground battle entrance",
 	"room_difficulty": 6 ,
-	"description": "You're standing infront of 50cents, ready to battle any newcommers to the Underground battle rooms",
-	"rapper": "50 Cents",
+	"description": "You're standing infront of 50 Cent, ready to battle any newcommers to the Underground battle rooms",
+	"rapper": "50 Cent",
 	"rapperbeat": False,
-	"exits": {"west" : "Lil Wayne's Battle Room", "south": "DMX's Battle Room", "up": "Parking"},
-	"rap": "fweoifh"
+	"exits": {"west" : "Lil Wayne's Battle Room", "south": "DMX's Battle Room", "north": "Parking"},
+	"rap": "I got places to go, got people to see, the penitentiary ain't the place for me",
+	"award": item_cigs
 }
 
 room_DMX = {
 	"name": "DMX's Battle Room",
 	"rap": "Where the hood, where the hood, where the hood at?!",
 	"room_difficulty": 15 ,
-	"description": "DMX feels like he can keep his tittle, are you up for the challenge",
+	"description": "DMX feels like he can keep his title, are you up for the challenge",
 	"rapper": "DMX",
 	"rapperbeat": False,
-	"exits": {"north" : "Underground battle entrance"},
+	"exits": {"north" : "Underground Battle Entrance"},
 	"award": item_belt
 
 }
@@ -172,6 +173,6 @@ rooms = {
     "2Pac & Biggie":room_2pac_biggie,
     "Parking":room_parking,
     "Lil Wayne's Battle Room": room_lilwayne,
-    "Underground battle entrance" : room_battlerooms_entrance,
+    "Underground Battle Entrance" : room_battlerooms_entrance,
     "DMX's Battle Room" : room_DMX
 }
