@@ -202,32 +202,24 @@ def print_menu(exits):
 
 def execute_command(command):
     """Sends the program to the current execute function."""
-    if command.split(' ', 1)[0] == "battle":
 
-        if current_room["rapperbeat"] == False: # if the rapper in the current room has not been beaten
+    if 0 == len(command):
+        return
 
-            if len(current_room["rapper"]) != 0: # if the room has a rapper in it
+    if command[0] == "battle":
+        if current_room["rapperbeat"] == False:
+            if len(current_room["rapper"]) != 0:
+                battle()
 
-                if current_room["rapper"] == "Eminem": 
-
-                    if calculate_reputation(inventory) < 10: # player needs reputation of above 10 to face Eminem
-                        
-                        print("You need to have a street cred of above 10")
-                        input("")
-                        print("Your current street credit is at " + str(calculate_reputation(inventory)))
-                        input("")
-
-                    else:
-                        battle()
-
-                else:
-                    battle()
-
-    elif command.split(' ', 1)[0] == "go":
-        execute_go(command.split(' ', 1)[1])
+    elif command[0] == "go":
+        if len(command) > 1:
+            execute_go(command[1])
+        else:
+            print("Go where?")
 
     else:
         print("I don't understand that command")
+        input("")
 
 
 def execute_go(direction):
@@ -250,11 +242,15 @@ def menu(exits):
     print_menu(current_room["exits"])
     print("")
     user_input = input("\n" + "> ")
+
+    normalised_user_input = normalise_input(user_input, False)
+
+    
     if user_input == "q": # this is mainly for ease of developing the game
         raise SystemExit()
 
     else:
-        return user_input
+        return normalised_user_input
 
 
 def main():
@@ -280,6 +276,12 @@ def main():
 
             if difficulty_multiplier == 0.750: # if the game has been played on legendary mode
                 player_score = player_score / 4
+
+            if difficulty_multiplier == 1.5: # if the game has been played on easy mode
+                player_score = player_score + 200
+
+            if difficulty_multiplier == 1.0: # if the game has been played on medium mode
+                player_score = player_score + 100
 
             slow_type("\n" + "You have beaten one of the greatest rappers ever and performed for thousands," + "\n", 400)
             slow_type("\n" + "Your score for the game was " + str(player_score) + " points!" + "\n", 400)
