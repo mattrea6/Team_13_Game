@@ -48,11 +48,42 @@ def slow_type(statement, typing_speed):
         sys.stdout.flush()
         time.sleep(random.random()*10.0/typing_speed) 
 
+def open_menu():
+    slow_type("RAPPING GAME NEEDS A NAME   [PEGI 18]" + "\n" + "\n" + "\n", 200)
+    slow_type("START" + "\n" + "\n", 300)
+    slow_type("INSTRUCTIONS" + "\n" + "\n", 300)
+    slow_type("EXIT" + "\n" + "\n", 300)
+    player_instruct = input("> ")
+
+    if player_instruct.lower() == "start":
+        cls()
+        screen_menu()
+
+    elif player_instruct.lower() == "instructions":
+        slow_type("In this game you are free to move around a map filled with rapper adversaries." + "\n", 300)
+        slow_type("To move around the map, simply type 'go' + a valid direction." + "\n", 300)
+        slow_type("To acknowledge writing on the screen, simply hit ENTER." + "\n", 300)
+        slow_type("In order to battle a rapper, type 'battle', and instructions will follow." + "\n", 300)
+        input("ENTER")
+        cls()
+        open_menu()
+
+    elif player_instruct.lower() == "exit":
+        raise SystemExit()
+
+    else:
+        slow_type("\n" + "I don't understand that command." + "\n" + "\n", 300)
+        input("ENTER")
+        cls()
+        open_menu()
+
+
+
 
 """ first menu when the game is executed, which appears once """
 def screen_menu():
 
-    slow_type("\n" + "\n" + "RAPPING GAME (title in progress)   [PEGI 18]" + "\n" + "\n" + "\n" + "Your goal is to become the best rapper, and beat Eminem at the Rap Concert." + "\n", 400)
+    slow_type("\n" + "\n" + "RAPPING GAME NEEDS A NAME   [PEGI 18]" + "\n" + "\n" + "\n" + "Your goal is to become the best rapper, and beat Eminem at the Rap Concert." + "\n", 400)
     input("")
     slow_type("The less rappers you have to destroy, the better your overall score will be. The lower your score - the better!" + "\n" + "\n", 400)
     input("")
@@ -304,7 +335,7 @@ def menu(exits):
 """ the main program that controls the flow of the program """
 def main():
 
-    screen_menu()
+    open_menu()
     while True:
 
         print_room(current_room)
