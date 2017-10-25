@@ -61,6 +61,10 @@ def screen_menu():
     slow_type("What is your name?:" + "\n", 400)
     username = input("> ")
 
+    if username == "Kirill":
+        slow_type("\n" + "Our lord and savior has returned...?! It's just as the prophecy foretold. " + "\n", 60)
+        input("")
+
     slow_type("Chose your difficulty - harder difficulty means better score! EASY / MEDIUM / HARD: " + "\n", 400)
     difficulty = input("> ")
     
@@ -69,14 +73,24 @@ def screen_menu():
 
     if difficulty.lower() == "easy":
         difficulty_multiplier = 1.5 
+    
     elif difficulty.lower() == "medium":
         difficulty_multiplier = 1.0
+    
     elif difficulty.lower() == "hard":
         difficulty_multiplier = 0.8
+    
     elif difficulty.lower() == "legendary":
         difficulty_multiplier = 0.750
-        slow_type("You've found the hidden legendary mode! While this mode is very difficult, it is still possible, and will guarantee you a great score", 400)
+        slow_type("\n" + "You've found the hidden legendary mode?!", 50) 
         input("")
+        slow_type("\n" + "The sky falls dark as the game becomes much, much harder.", 400) 
+        input("")
+        slow_type("\n" + "This would be the point at which dramatic music would play, if we knew how to implement that...", 400) 
+        input("")
+        slow_type("\n" + "If you manage to complete the game on this mode, it guarantees you a great score!", 400)
+        input("\n" + "\n" + "[ENTER]")
+    
     else:
         slow_type("That's not an option", 400)
         difficulty = input("easy/medium/hard: ")
