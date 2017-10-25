@@ -7,7 +7,7 @@ room_studio = {
 	"description": "The studio is small, and smells of marijuana. The coat rack is empty, man's not hot.",
 	"rapper": "Roadman Shaq",
 	"rapperbeat": False,
-	"exits": {"south": "Street Corner", "north": "Rap Concert", "east": "Recording Booth", "west":"Main Street"},
+	"exits": {"south": "Street Corner", "north": "Concert", "east": "Recording Booth", "west":"Main Street"},
 	"award": item_hat
 
 }
@@ -82,7 +82,7 @@ jail_entrance = {
 main_street = {
 	"name": "Main Street",
 	"description": "You are on the Main Street.",
-	"exits": {"north":"Jail Entrance", "south":"Grove Street", "west": "Snoop Dogg Mansion", "east" : "studio"},
+	"exits": {"north":"Jail Entrance", "south":"Grove Street", "west": "Snoop Dogg Mansion", "east" : "Studio"},
 	"rap": "I'm bout to make this mic short circuit, this beat is whack and fits you perfect",
 	"room_difficulty":16,
 	"rapperbeat": False,
