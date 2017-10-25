@@ -97,7 +97,8 @@ grove_street = {
 	"room_difficulty":14,
 	"rapperbeat": False,
 	"rapper":"Ice Cube",
-	"award": item_mic
+	"award": item_mic,
+	"rap": "wefpwiohj"
 
 }
 
@@ -109,6 +110,7 @@ room_recordingbooth = {
 	"rapperbeat": False,
 	"rapper": "Notorious B.I.G.",
 	"award": item_ring
+	"rap": ewofiuh
 }
 
 room_parking = {
@@ -117,6 +119,7 @@ room_parking = {
 	"description": "As you rush down the stairs, you hit someone and turn around. You end up face to face with Dr.Dre.",
 	"rapper": "Dr.Dre",
 	"rapperbeat": False,
+	"rap": "wofgeuihf"
 	"exits": {"west" : "Street Corner", "down": "Underground battle rooms"},
 	"award": item_watch
 
@@ -128,6 +131,7 @@ room_lilwayne = {
 	"description": "Youre standing in the middle of a made up ring, ready to drop bombs on Lil Wayne",
 	"rapper": "Lil Wayne",
 	"rapperbeat": False,
+	"rap": "efowuih",
 	"exits": {"east": "Underground battle entrance"},
 	"award": item_grills
 
@@ -140,6 +144,7 @@ room_battlerooms_entrance = {
 	"rapper": "50 Cents",
 	"rapperbeat": False,
 	"exits": {"west" : "Lil Wayne's Battle Room", "south": "DMX's Battle Room", "up": "Parking"},
+	"rap": "fweoifh"
 }
 
 room_DMX = {
