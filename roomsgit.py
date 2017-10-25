@@ -109,8 +109,8 @@ room_recordingbooth = {
 	"room_difficulty": 14,
 	"rapperbeat": False,
 	"rapper": "Notorious B.I.G.",
-	"award": item_ring
-	"rap": ewofiuh
+	"award": item_ring,
+	"rap": "ewofiuh"
 }
 
 room_parking = {
@@ -119,7 +119,7 @@ room_parking = {
 	"description": "As you rush down the stairs, you hit someone and turn around. You end up face to face with Dr.Dre.",
 	"rapper": "Dr.Dre",
 	"rapperbeat": False,
-	"rap": "wofgeuihf"
+	"rap": "wofgeuihf",
 	"exits": {"west" : "Street Corner", "down": "Underground battle rooms"},
 	"award": item_watch
 
