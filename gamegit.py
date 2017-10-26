@@ -12,7 +12,7 @@ from gameparser import *
 from Bars import *
 
 
-""" for finding the current best score from the spreadsheet example.xls """
+""" for finding the current best score from the spreadsheet.xls """
 workbook = xlrd.open_workbook('scoreboard.xls')
 worksheet = workbook.sheet_by_name('A Test Sheet') 
 
@@ -380,7 +380,7 @@ def main():
                 print("You have the best score of the day - so far!")
                 ws.write(0, 0, player_score)    # adds the player's score to the spreadsheet, in place of the previous best score
                 ws.write(1, 0, username)    # adds the user's name in place of the current user's name on the spreadsheet
-                wb.save('example.xls')    # saves the excel document
+                wb.save('scoreboard.xls')    # saves the excel document
             else:
                 slow_type("The best score of the day so far is " + str(best_score) + ".", 400)
                 slow_type("\n" + "Playing on a harder difficulty will make it easier to get a better score!", 400)
