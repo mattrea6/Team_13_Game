@@ -1,4 +1,4 @@
-import datetime 
+import datetime
 import random
 import time
 import sys
@@ -13,7 +13,7 @@ from Bars import *
 
 
 """ for finding the current best score from the spreadsheet example.xls """
-workbook = xlrd.open_workbook('example.xls')
+workbook = xlrd.open_workbook('scoreboard.xls')
 worksheet = workbook.sheet_by_name('A Test Sheet') 
 
 """ sets up example.xls to recieve a new username and score if the score from this game surpasses current best score"""
@@ -22,20 +22,20 @@ ws = wb.add_sheet('A Test Sheet')
 
 """ starts the player off with 0 score """
 global player_score
-player_score = 0 
+player_score = 0
 
 """ begins the timer for the game """
 start_time = datetime.datetime.now()
 
 """ this multiplier will change dependant on user input for difficulty in game's menu """
 global difficulty_multiplier
-difficulty_multiplier = 1.0 
+difficulty_multiplier = 1.0
 
 
 """ this function is for clearing screen between rooms """
 def cls():
 
-            os.system('cls' if os.name=='nt' else 'clear') 
+            os.system('cls' if os.name=='nt' else 'clear')
 
 cls()
 
@@ -46,7 +46,7 @@ def slow_type(statement, typing_speed):
     for letter in statement:
         sys.stdout.write(letter)
         sys.stdout.flush()
-        time.sleep(random.random()*10.0/typing_speed) 
+        time.sleep(random.random()*10.0/typing_speed)
 
 def open_menu():
     slow_type("RAPPING GAME NEEDS A NAME   [PEGI 18]" + "\n" + "\n" + "\n", 200)
@@ -98,30 +98,30 @@ def screen_menu():
 
     slow_type("Chose your difficulty - harder difficulty means better score! EASY / MEDIUM / HARD: " + "\n", 400)
     difficulty = input("> ")
-    
+
     """ users the user input for difficulty to edit variable difficulty_multiplier """
     global difficulty_multiplier
 
     if difficulty.lower() == "easy":
-        difficulty_multiplier = 1.5 
-    
+        difficulty_multiplier = 1.5
+
     elif difficulty.lower() == "medium":
         difficulty_multiplier = 1.0
-    
+
     elif difficulty.lower() == "hard":
         difficulty_multiplier = 0.8
-    
+
     elif difficulty.lower() == "legendary":
         difficulty_multiplier = 0.750
-        slow_type("\n" + "You've found the hidden legendary mode?!", 50) 
+        slow_type("\n" + "You've found the hidden legendary mode?!", 50)
         input("")
-        slow_type("\n" + "The sky falls dark as the game becomes much, much harder.", 400) 
+        slow_type("\n" + "The sky falls dark as the game becomes much, much harder.", 400)
         input("")
-        slow_type("\n" + "This would be the point at which dramatic music would play, if we knew how to implement that...", 400) 
+        slow_type("\n" + "This would be the point at which dramatic music would play, if we knew how to implement that...", 400)
         input("")
         slow_type("\n" + "If you manage to complete the game on this mode, it guarantees you a great score!", 400)
         input("\n" + "\n" + "[ENTER]")
-    
+
     else:
         slow_type("That's not an option", 400)
         difficulty = input("easy/medium/hard: ")
@@ -158,8 +158,8 @@ def battle():
     print("")
     slow_type(current_room["rapper"] + ": '" + current_room["rap"] + "'" + "\n", 300)
     input("")
-    
-    
+
+
     slow_type("You're in the heat of the battle! You have " + str(round(int(current_room["room_difficulty"]) * difficulty_multiplier + int(calculate_reputation(inventory)))) + " seconds to show your talent and rap " + "\n" + "'" + players_rap + "'" +"\n", 400)
     input("")
     slow_type("You must type word for word, letter for letter." + "\n", 400)
@@ -177,7 +177,7 @@ def battle():
             divmod(c.days * 86400 + c.seconds, 60)    # this formats the time into something that can be used in an if statement
             d = current_room["room_difficulty"] * difficulty_multiplier
             total_time = d + int(calculate_reputation(inventory))
-            
+
             if c.seconds > total_time:    # if the user time (c.seconds) is larger than what the room's allocated time is
                 slow_type("You didn't rap fast enough!", 400)
                 input("")
@@ -188,7 +188,7 @@ def battle():
                 global player_score
                 player_score += 10
                 input("[ENTER]")
-            
+
             else:
                 slow_type("\n" + "\n" + "You showed your rapping skills and won the rap battle!" + "\n", 400)
                 current_room["rapperbeat"] = True
@@ -208,9 +208,9 @@ def battle():
                 input("\n" + "[ENTER]")
         else:
             slow_type("You didn't rap the right words, and flopped in the battle." + "\n" + "\n", 400)
-            player_score += 10 
+            player_score += 10
             input("[ENTER]")
-    
+
     else:
         slow_type("You pussied out of the fight and got thrown out of the club", 400)
         player_score += 5
@@ -324,7 +324,7 @@ def menu(exits):
 
     normalised_user_input = normalise_input(user_input, False)    # normalises the user's input
 
-    
+
     if user_input == "q":    # this is mainly for ease of developing the game
         raise SystemExit()
 
@@ -374,7 +374,7 @@ def main():
             slow_type("\n" + "You have beaten one of the greatest rappers ever and performed for thousands," + "\n", 400)
             slow_type("\n" + "Your score for the game was " + str(player_score) + " points!" + "\n", 400)
 
-            
+
             best_score = worksheet.row(0)[0].value    # takes value of score from excel spreadsheet
             if float(player_score) < best_score:    # if the users score is lower (better) than the score on the spreadsheet (current best score)
                 print("You have the best score of the day - so far!")
