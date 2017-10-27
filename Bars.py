@@ -8,7 +8,11 @@ hard_bars = [
     "Had a spark when you started but now youre just garbage, fell from top 10 to not mentioned at all",
     "Id like to see things from your point of view, but I cant seem to get my head that far up your ass",
     "do your parents even realize theyre living proof that two wrongs dont make a right",
-    "They say music can alter moods and talk to you, well can it load a gun up for you, and cock it too"
+    "They say music can alter moods and talk to you, well can it load a gun up for you, and cock it too",
+    "Toxic not a shell of these cashews, they gassed up unleaded is premium",
+    "Dont get it twisted im like a rich kid on christmas, im gifted",
+    "Listenin to slim shady on my radio trying to emulate that same crazy flow",
+    
     
 ]
 
@@ -21,6 +25,13 @@ medium_bars = [
     "Do yourself a favor and ignore anyone who tells you to be yourself, bad idea in your case",
     "I feel like the incredible hulk my back has been broke, and I can still walk",
     "If I had one wish, I would ask for a big enough ass for the whole world to kiss",
+    "In the burbs mocking birds, while out in the world they kill mockingbirds",
+    "Black sheep they locking herds, ahead and underground top preferred",
+    "Been thinking bout knocking her, cant relax on my dreams",
+    "How many bars will it take just to lyrically rape and humiliate this fake",
+    "do you even know what the fuck youre saying? you rap more like a wannabe Slim Shady",
+    "wake up, youre in a rap battle, get your ass right back in the saddle",
+    "I made your weak-ass wait the weekend, foo just to get your own ass handed to you"
 
 
 ]
@@ -39,6 +50,11 @@ easy_bars = [
     "See im a nice man but money turned me to satan",
     "Im alive again, more alive than I have been in my whole entire life",
     "I cant rap anymore... I just murdered the alphabet",
+    "New level im on track to, cream of the crop but cash rules",
+    "More snaps and tattoos, sly fox cooped thats bad news",
+    "Drum tremors, when my hands move thats a wrap dude",
+    "you need a haircut more than a bears nuts"
+    
 
 
 
@@ -50,6 +66,7 @@ legendary_bars = [
     "Your ass forgot, so just in case you dont remember me, ill run your brain around the block to jog your fucking memory",
     "You only get one shot, do not miss your chance to blow, cuz opportunity comes once in a lifetime yo",
     "Remember when ronnie died and you said you wished it was me, well guess what, I am dead, dead to you as can be",
+    "Lyrically im the leader of a tyranny, the working class consists of the beats, and when I speak ivve got everybody fearin me"
     ]
 
 
